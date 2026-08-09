@@ -13,6 +13,7 @@ import CiscoPy2 from '../assets/certificates/PyEssentials2-Molina.jpg'
 import Docker from '../assets/certificates/Docker-Certificate-Molina.jpg'
 import DevOps from '../assets/certificates/DevOps-Micro-Molina.jpg'
 import Microservices from '../assets/certificates/MicroServices-Molina.jpg'
+import DOST from '../assets/certificates/DOST_Hack_Certif.jpg'
 
 //Org's Logo
 import Cisco from '../assets/icons/Cisco.png'
@@ -21,9 +22,19 @@ import MongoDBLogo from '../assets/icons/mongodb.svg'
 import TCULogo from '../assets/icons/TCU-logo.png'
 import DockerLogo from '../assets/icons/docker.png'
 import LinkedInLogo from '../assets/icons/linkedin.webp'
+import DOSTLogo from '../assets/icons/dost.webp'
 
 
 export const certificates = [
+  {
+    title: 'Code Green: Digital Solutions Hackathon for Circular Economy',
+    issuer: 'Department of Science and Technology (Philippines)',
+    date: 'August 2026',
+    orgLogo: DOSTLogo,
+    image: DOST,
+    credentialUrl: 'https://www.facebook.com/dost.ncr',
+    skills: ['Hackathon', 'Circular Economy', 'Digital Solutions']
+  },
   {
     title: 'Microservices Foundations',
     issuer: 'LinkedIn',
