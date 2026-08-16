@@ -221,10 +221,10 @@ const AllProjectsPage = ({ isDark }) => {
                 <motion.div variants={cardVariants} className="mb-8">
                     <button
                         onClick={handleBackToProjects}
-                        className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium border transition-all duration-300 ${
+                        className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium border border-red-500/80 shadow-md shadow-red-500/10 transition-all duration-300 ${
                             isDark
-                                ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-white hover:border-red-500 hover:bg-neutral-800'
-                                : 'bg-white border-neutral-200 text-neutral-700 hover:text-black hover:border-red-500 hover:bg-neutral-50'
+                                ? 'bg-neutral-900 text-neutral-300 hover:text-white hover:border-red-500 hover:bg-neutral-800 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
+                                : 'bg-white text-neutral-700 hover:text-black hover:border-red-500 hover:bg-neutral-50 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
                         }`}
                     >
                         <ArrowLeft size={18} />
@@ -410,11 +410,7 @@ const AllProjectsPage = ({ isDark }) => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         onClick={(e) => e.stopPropagation()}
-                                        className={`flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border transition-all duration-300 ${
-                                            isDark
-                                                ? 'bg-neutral-800 text-neutral-200 border-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-600'
-                                                : 'bg-neutral-900 text-white border-neutral-900 hover:bg-red-600 hover:text-white hover:border-red-600'
-                                        }`}
+                                        className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-red-500 bg-red-600 hover:bg-red-500 text-white font-semibold shadow-md shadow-red-600/30 hover:shadow-lg hover:shadow-red-600/50 transition-all duration-300"
                                     >
                                         <ExternalLink size={14} />
                                         <span className="text-xs font-semibold">Demo</span>
@@ -436,8 +432,8 @@ const AllProjectsPage = ({ isDark }) => {
                     transition={{ duration: 0.25 }}
                     className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 p-3.5 rounded-full shadow-2xl backdrop-blur-md border transition-all duration-200 ${
                         isDark
-                            ? 'bg-neutral-900/90 text-neutral-200 border-neutral-800 hover:bg-red-600 hover:text-white hover:border-red-600'
-                            : 'bg-white/90 text-neutral-900 border-neutral-200 hover:bg-red-600 hover:text-white hover:border-red-600'
+                            ? 'bg-neutral-900/90 text-neutral-200 border-neutral-800 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.4)]'
+                            : 'bg-white/90 text-neutral-900 border-neutral-200 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.3)]'
                     }`}
                 >
                     <ArrowLeft size={18} className="rotate-90" />
@@ -524,10 +520,10 @@ const AllProjectsPage = ({ isDark }) => {
                                             href={selectedProject.github}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={`flex items-center gap-2 px-4 py-2 rounded-xl border transition-all duration-300 ${
+                                            className={`flex items-center gap-2 px-4 py-2 rounded-xl border shadow-sm transition-all duration-300 ${
                                                 isDark
-                                                    ? 'bg-neutral-800 text-neutral-300 border-neutral-700 hover:bg-neutral-700 hover:text-white hover:border-red-500'
-                                                    : 'bg-neutral-100 text-neutral-700 border-neutral-200 hover:bg-neutral-200 hover:text-black hover:border-red-500'
+                                                    ? 'bg-neutral-800 text-neutral-300 border-neutral-700 hover:bg-neutral-700 hover:text-white hover:border-red-500 hover:shadow-md hover:shadow-red-500/20'
+                                                    : 'bg-neutral-100 text-neutral-700 border-neutral-200 hover:bg-neutral-200 hover:text-black hover:border-red-500 hover:shadow-md hover:shadow-red-500/20'
                                             }`}
                                         >
                                             <Github size={16} />
@@ -539,11 +535,7 @@ const AllProjectsPage = ({ isDark }) => {
                                             href={selectedProject.demo}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={`flex items-center gap-2 px-4 py-2 rounded-xl border transition-all duration-300 ${
-                                                isDark
-                                                    ? 'bg-neutral-800 text-neutral-200 border-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-600'
-                                                    : 'bg-neutral-900 text-white border-neutral-900 hover:bg-red-600 hover:text-white hover:border-red-600'
-                                            }`}
+                                            className="flex items-center gap-2 px-4 py-2 rounded-xl border border-red-500 bg-red-600 hover:bg-red-500 text-white font-semibold shadow-md shadow-red-600/30 hover:shadow-lg hover:shadow-red-600/50 transition-all duration-300"
                                         >
                                             <ExternalLink size={16} />
                                             <span className="text-sm font-medium">Demo</span>

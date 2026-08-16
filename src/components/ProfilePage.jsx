@@ -154,38 +154,50 @@ export default function ProfileCard({ isDark, setIsDark }) {
               </div>
 
               {/* Social Links - Desktop Fixed Position */}
-              <div className="absolute top-0 left-[380px] flex gap-2">
+              <div className="absolute top-0 left-[380px] flex gap-2.5">
                 <motion.a
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
                   href="https://github.com/kimalfredmolina"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`p-2.5 rounded-full transition-colors duration-300 ${isDark
-                    ? 'bg-[#334155] hover:bg-[#475569] text-white'
-                    : 'bg-gray-800 hover:bg-gray-900 text-white'
-                    }`}
+                  className={`p-2.5 rounded-full transition-all duration-300 shadow-md border ${
+                    isDark
+                      ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
+                      : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
+                  }`}
+                  title="GitHub"
                 >
                   <Github size={18} />
                 </motion.a>
 
                 <motion.a
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
                   href="https://www.linkedin.com/in/kim-alfred-a-molina/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300"
+                  className={`p-2.5 rounded-full transition-all duration-300 shadow-md border ${
+                    isDark
+                      ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
+                      : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
+                  }`}
+                  title="LinkedIn"
                 >
                   <Linkedin size={18} />
                 </motion.a>
 
                 <div className="relative">
                   <motion.button
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.08 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handleCopyEmail}
-                    className="p-2.5 rounded-full bg-red-600 hover:bg-red-700 text-white transition-colors duration-300"
+                    className={`p-2.5 rounded-full transition-all duration-300 shadow-md border ${
+                      isDark
+                        ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
+                        : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
+                    }`}
+                    title="Copy Email"
                   >
                     <Mail size={18} />
                   </motion.button>
@@ -221,10 +233,11 @@ export default function ProfileCard({ isDark, setIsDark }) {
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className={`relative z-10 flex h-12 items-center justify-center gap-2 rounded-xl px-6 font-medium transition-all duration-300 border ${isDark
-                    ? 'bg-neutral-900 text-neutral-200 border-neutral-800 hover:border-red-500 hover:text-red-400 group-hover:border-red-500'
-                    : 'bg-neutral-950 text-white border-neutral-950 hover:bg-neutral-900 hover:border-red-600 hover:text-red-400 group-hover:border-red-600'
-                    }`}
+                  className={`relative z-10 flex h-12 items-center justify-center gap-2 rounded-xl px-6 font-medium transition-all duration-300 border border-red-500/80 shadow-md shadow-red-500/10 ${
+                    isDark
+                      ? 'bg-neutral-900 text-neutral-200 hover:text-white hover:bg-neutral-800 hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.35)]'
+                      : 'bg-neutral-950 text-white hover:bg-neutral-900 hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.25)]'
+                  }`}
                 >
                   {/* Text */}
                   <span className="transition-transform duration-500 group-hover:-translate-y-[150%] group-hover:opacity-0 flex items-center gap-2">
@@ -232,8 +245,9 @@ export default function ProfileCard({ isDark, setIsDark }) {
                     View my Resume
                   </span>
                   {/* Icon slides up */}
-                  <span className="absolute translate-y-[150%] opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                    <Eye size={22} className="text-red-500" />
+                  <span className="absolute translate-y-[150%] opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100 flex items-center gap-2 text-red-500">
+                    <Eye size={20} />
+                    <span>View Resume</span>
                   </span>
                 </motion.div>
               </a>
@@ -264,44 +278,50 @@ export default function ProfileCard({ isDark, setIsDark }) {
             </div>
 
             {/* Social Links - Mobile */}
-            <div className="flex gap-2 mb-4">
+            <div className="flex gap-2.5 mb-4">
               <motion.a
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 href="https://github.com/kimalfredmolina"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-2.5 rounded-full transition-all duration-300 shadow-sm border ${isDark
-                  ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-600'
-                  : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-600'
-                  }`}
+                className={`p-2.5 rounded-full transition-all duration-300 shadow-md border ${
+                  isDark
+                    ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
+                    : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
+                }`}
+                title="GitHub"
               >
                 <Github size={18} />
               </motion.a>
 
               <motion.a
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 href="https://www.linkedin.com/in/kim-alfred-a-molina/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-2.5 rounded-full transition-all duration-300 shadow-sm border ${isDark
-                  ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-600'
-                  : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-600'
-                  }`}
+                className={`p-2.5 rounded-full transition-all duration-300 shadow-md border ${
+                  isDark
+                    ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
+                    : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
+                }`}
+                title="LinkedIn"
               >
                 <Linkedin size={18} />
               </motion.a>
 
               <div className="relative">
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={handleCopyEmail}
-                  className={`p-2.5 rounded-full transition-all duration-300 shadow-sm border ${isDark
-                    ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-600'
-                    : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-600'
-                    }`}
+                  className={`p-2.5 rounded-full transition-all duration-300 shadow-md border ${
+                    isDark
+                      ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
+                      : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
+                  }`}
+                  title="Copy Email"
                 >
                   <Mail size={18} />
                 </motion.button>
@@ -336,10 +356,11 @@ export default function ProfileCard({ isDark, setIsDark }) {
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className={`relative z-10 flex h-12 w-full items-center justify-center gap-2 rounded-xl px-6 font-medium transition-all duration-300 border ${isDark
-                    ? 'bg-neutral-900 text-neutral-200 border-neutral-800 hover:border-red-500 hover:text-red-400 group-hover:border-red-500'
-                    : 'bg-neutral-950 text-white border-neutral-950 hover:bg-neutral-900 hover:border-red-600 hover:text-red-400 group-hover:border-red-600'
-                    }`}
+                  className={`relative z-10 flex h-12 w-full items-center justify-center gap-2 rounded-xl px-6 font-medium transition-all duration-300 border border-red-500/80 shadow-md shadow-red-500/10 ${
+                    isDark
+                      ? 'bg-neutral-900 text-neutral-200 hover:text-white hover:bg-neutral-800 hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.35)]'
+                      : 'bg-neutral-950 text-white hover:bg-neutral-900 hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.25)]'
+                  }`}
                 >
                   {/* Text */}
                   <span className="transition-transform duration-500 group-hover:-translate-y-[150%] group-hover:opacity-0 flex items-center gap-2">
@@ -347,8 +368,9 @@ export default function ProfileCard({ isDark, setIsDark }) {
                     View my Resume
                   </span>
                   {/* Icon slides up */}
-                  <span className="absolute translate-y-[150%] opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                    <Eye size={22} className="text-red-500" />
+                  <span className="absolute translate-y-[150%] opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100 flex items-center gap-2 text-red-500">
+                    <Eye size={20} />
+                    <span>View Resume</span>
                   </span>
                 </motion.div>
               </a>

@@ -187,11 +187,7 @@ const CertificatesPage = ({ isDark }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className={`flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border transition-all duration-300 ${
-                    isDark
-                      ? 'bg-neutral-800 text-neutral-200 border-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-600'
-                      : 'bg-neutral-900 text-white border-neutral-900 hover:bg-red-600 hover:text-white hover:border-red-600'
-                  }`}
+                  className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-red-500 bg-red-600 hover:bg-red-500 text-white font-semibold shadow-md shadow-red-600/30 hover:shadow-lg hover:shadow-red-600/50 transition-all duration-300"
                 >
                   <ExternalLink size={14} />
                   <span className="text-xs font-semibold">Verify Credential</span>
@@ -205,11 +201,11 @@ const CertificatesPage = ({ isDark }) => {
         <motion.div variants={cardVariants} className="mt-12 text-center">
           <Link
             to="/allcertificates"
-            className={`group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-xl px-8 font-medium transition-all duration-300 border
+            className={`group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-xl px-8 font-medium transition-all duration-300 border border-red-500/80 shadow-lg shadow-red-500/10
               ${
                 isDark
-                  ? 'bg-neutral-900 text-white border-neutral-800 hover:bg-red-600 hover:border-red-600'
-                  : 'bg-neutral-950 text-white border-neutral-950 hover:bg-red-600 hover:border-red-600'
+                  ? 'bg-neutral-900 text-white hover:bg-red-600 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)]'
+                  : 'bg-neutral-950 text-white hover:bg-red-600 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.3)]'
               }`}
           >
             {/* Default Content */}
