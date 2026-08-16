@@ -235,8 +235,8 @@ export default function ProfileCard({ isDark, setIsDark }) {
                   whileTap={{ scale: 0.97 }}
                   className={`relative z-10 flex h-12 items-center justify-center gap-2 rounded-xl px-6 font-medium transition-all duration-300 border border-red-500/80 shadow-md shadow-red-500/10 ${
                     isDark
-                      ? 'bg-neutral-900 text-neutral-200 hover:text-white hover:bg-neutral-800 hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.35)]'
-                      : 'bg-neutral-950 text-white hover:bg-neutral-900 hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.25)]'
+                      ? 'bg-neutral-900 text-neutral-200 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.35)]'
+                      : 'bg-white text-neutral-900 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.3)]'
                   }`}
                 >
                   {/* Text */}
@@ -245,7 +245,7 @@ export default function ProfileCard({ isDark, setIsDark }) {
                     View my Resume
                   </span>
                   {/* Icon slides up */}
-                  <span className="absolute translate-y-[150%] opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100 flex items-center gap-2 text-red-500">
+                  <span className="absolute translate-y-[150%] opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100 flex items-center gap-2 text-white">
                     <Eye size={20} />
                     <span>View Resume</span>
                   </span>
@@ -358,8 +358,8 @@ export default function ProfileCard({ isDark, setIsDark }) {
                   whileTap={{ scale: 0.97 }}
                   className={`relative z-10 flex h-12 w-full items-center justify-center gap-2 rounded-xl px-6 font-medium transition-all duration-300 border border-red-500/80 shadow-md shadow-red-500/10 ${
                     isDark
-                      ? 'bg-neutral-900 text-neutral-200 hover:text-white hover:bg-neutral-800 hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.35)]'
-                      : 'bg-neutral-950 text-white hover:bg-neutral-900 hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.25)]'
+                      ? 'bg-neutral-900 text-neutral-200 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.35)]'
+                      : 'bg-white text-neutral-900 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.3)]'
                   }`}
                 >
                   {/* Text */}
@@ -368,7 +368,7 @@ export default function ProfileCard({ isDark, setIsDark }) {
                     View my Resume
                   </span>
                   {/* Icon slides up */}
-                  <span className="absolute translate-y-[150%] opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100 flex items-center gap-2 text-red-500">
+                  <span className="absolute translate-y-[150%] opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100 flex items-center gap-2 text-white">
                     <Eye size={20} />
                     <span>View Resume</span>
                   </span>

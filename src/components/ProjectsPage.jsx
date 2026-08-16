@@ -198,7 +198,7 @@ const ProjectsPage = ({ isDark }) => {
               ${
                 isDark
                   ? 'bg-neutral-900 text-white hover:bg-red-600 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)]'
-                  : 'bg-neutral-950 text-white hover:bg-red-600 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.3)]'
+                  : 'bg-white text-neutral-900 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.3)]'
               }`}
           >
             {/* Default Content */}
@@ -210,7 +210,7 @@ const ProjectsPage = ({ isDark }) => {
 
             {/* Hover Content */}
             <div className="absolute flex items-center gap-2 translate-x-[150%] opacity-0 transition-all duration-500
-                            group-hover:translate-x-0 group-hover:opacity-100">
+                            group-hover:translate-x-0 group-hover:opacity-100 text-white">
               <span>Explore</span>
               <ArrowRight size={20} />
             </div>
