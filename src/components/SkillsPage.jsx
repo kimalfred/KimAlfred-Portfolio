@@ -79,22 +79,22 @@ const SkillsPage = ({ isDark }) => {
         <motion.div
           variants={itemVariants}
           whileHover={{ y: -4 }}
-          className={`relative p-8 rounded-2xl overflow-hidden transition-all duration-300
+          className={`group relative p-8 rounded-2xl overflow-hidden transition-all duration-300 border
             ${isDark
-              ? 'bg-gradient-to-br from-[#2d3748] to-[#1e293b] shadow-[0_8px_30px_rgb(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.5)]'
-              : 'bg-gradient-to-br from-white to-gray-50 shadow-[0_2px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)]'
+              ? 'bg-neutral-900/90 border-neutral-800 shadow-[0_8px_30px_rgba(0,0,0,0.5)] hover:border-neutral-700 hover:shadow-[0_12px_40px_rgba(239,68,68,0.08)]'
+              : 'bg-white border-neutral-200/90 shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:border-neutral-300 hover:shadow-[0_8px_30px_rgba(239,68,68,0.06)]'
             }`}
         >
-          <div className={`absolute top-4 left-0 w-1 h-20 rounded-r-full ${isDark ? 'bg-gradient-to-b from-lime-400 to-lime-500' : 'bg-gradient-to-b from-red-500 to-red-600'}`} />
+          <div className={`absolute top-4 left-0 w-1 h-20 rounded-r-full transition-colors duration-300 ${isDark ? 'bg-neutral-700 group-hover:bg-red-500' : 'bg-neutral-300 group-hover:bg-red-600'}`} />
 
-          <h2 className={`text-2xl font-bold mb-6 tracking-tight ${isDark ? 'text-red-400' : 'text-red-600'}`}>
+          <h2 className={`text-2xl font-bold mb-6 tracking-tight ${isDark ? 'text-white' : 'text-neutral-900'}`}>
             Technical Skills
           </h2>
 
           <div className="space-y-6">
             {Object.entries(skills).map(([category, items]) => (
               <div key={category}>
-                <h3 className={`text-base font-bold mb-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                <h3 className={`text-sm font-bold mb-3 uppercase tracking-wider ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>
                   {category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -105,10 +105,10 @@ const SkillsPage = ({ isDark }) => {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: index * 0.05 }}
                       whileHover={{ scale: 1.05 }}
-                      className={`group flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium shadow-sm transition-all duration-200
+                      className={`group/skill flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium shadow-sm transition-all duration-200 border
                         ${isDark
-                          ? 'bg-[#1f2937] text-gray-300 hover:bg-lime-500/10 hover:text-lime-400 hover:border hover:border-lime-400'
-                          : 'bg-gray-100 text-gray-700 hover:bg-red-500/10 hover:text-red-500 hover:border hover:border-red-500'
+                          ? 'bg-neutral-800/90 text-neutral-300 border-neutral-700/60 hover:bg-red-600 hover:text-white hover:border-red-600'
+                          : 'bg-neutral-100 text-neutral-700 border-neutral-200 hover:bg-red-600 hover:text-white hover:border-red-600'
                         }`}
                     >
                       {getIconPath(skill.name) && (
@@ -127,15 +127,15 @@ const SkillsPage = ({ isDark }) => {
         <motion.div
           variants={itemVariants}
           whileHover={{ y: -4 }}
-          className={`relative p-8 rounded-2xl overflow-hidden transition-all duration-300 h-fit
+          className={`group relative p-8 rounded-2xl overflow-hidden transition-all duration-300 h-fit border
             ${isDark
-              ? 'bg-gradient-to-br from-[#2d3748] to-[#1e293b] shadow-[0_8px_30px_rgb(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.5)]'
-              : 'bg-gradient-to-br from-white to-gray-50 shadow-[0_2px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)]'
+              ? 'bg-neutral-900/90 border-neutral-800 shadow-[0_8px_30px_rgba(0,0,0,0.5)] hover:border-neutral-700 hover:shadow-[0_12px_40px_rgba(239,68,68,0.08)]'
+              : 'bg-white border-neutral-200/90 shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:border-neutral-300 hover:shadow-[0_8px_30px_rgba(239,68,68,0.06)]'
             }`}
         >
-          <div className={`absolute top-4 left-0 w-1 h-20 rounded-r-full ${isDark ? 'bg-gradient-to-b from-lime-400 to-lime-500' : 'bg-gradient-to-b from-red-500 to-red-600'}`} />
+          <div className={`absolute top-4 left-0 w-1 h-20 rounded-r-full transition-colors duration-300 ${isDark ? 'bg-neutral-700 group-hover:bg-red-500' : 'bg-neutral-300 group-hover:bg-red-600'}`} />
 
-          <h2 className={`text-2xl font-bold mb-6 tracking-tight ${isDark ? 'text-red-400' : 'text-red-600'}`}>
+          <h2 className={`text-2xl font-bold mb-6 tracking-tight ${isDark ? 'text-white' : 'text-neutral-900'}`}>
             Experience
           </h2>
 
@@ -146,25 +146,25 @@ const SkillsPage = ({ isDark }) => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.2 }}
-                className={`relative pl-6 border-l-2 last:border-transparent ${isDark ? 'border-gray-600' : 'border-gray-300'}`}
+                className={`relative pl-6 border-l-2 last:border-transparent group/item ${isDark ? 'border-neutral-800' : 'border-neutral-200'}`}
               >
                 {/* Timeline dot with ring */}
-                <div className={`absolute -left-[9px] top-1.5 w-4 h-4 rounded-full shadow-md ring-[3px]
-                  ${isDark ? 'bg-lime-400 ring-[#1e293b]' : 'bg-red-500 ring-white'}`}
+                <div className={`absolute -left-[9px] top-1.5 w-4 h-4 rounded-full shadow-md ring-[3px] transition-colors duration-300
+                  ${isDark ? 'bg-neutral-500 ring-[#09090b] group-hover/item:bg-red-500' : 'bg-neutral-400 ring-white group-hover/item:bg-red-600'}`}
                 />
 
                 {/* Top row: role + year badge */}
                 <div className="flex items-start justify-between gap-3 mb-2">
-                  <h3 className={`text-lg font-bold leading-snug ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <h3 className={`text-lg font-bold leading-snug ${isDark ? 'text-neutral-200' : 'text-neutral-800'}`}>
                     {experience.role}
                   </h3>
-                  <span className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full shadow-md whitespace-nowrap flex-shrink-0
-                    ${isDark ? 'bg-lime-400 text-gray-900' : 'text-white bg-gradient-to-r from-red-500 to-red-600'}`}
+                  <span className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full shadow-sm whitespace-nowrap flex-shrink-0 border transition-colors duration-300
+                    ${isDark ? 'bg-neutral-800 text-neutral-200 border-neutral-700 group-hover/item:bg-red-600 group-hover/item:text-white group-hover/item:border-red-600' : 'bg-neutral-100 text-neutral-800 border-neutral-200 group-hover/item:bg-red-600 group-hover/item:text-white group-hover/item:border-red-600'}`}
                   >
                     {index === 0 && (
                       <span className="relative flex h-2 w-2">
-                        <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isDark ? 'bg-gray-900' : 'bg-white'}`} />
-                        <span className={`relative inline-flex rounded-full h-2 w-2 ${isDark ? 'bg-gray-900' : 'bg-white'}`} />
+                        <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-red-500`} />
+                        <span className={`relative inline-flex rounded-full h-2 w-2 bg-red-500`} />
                       </span>
                     )}
                     {experience.year}
@@ -172,16 +172,16 @@ const SkillsPage = ({ isDark }) => {
                 </div>
 
                 {/* Company */}
-                <p className={`text-sm font-semibold mb-2 ${isDark ? 'text-lime-500' : 'text-red-600'}`}>
+                <p className={`text-sm font-semibold mb-2 transition-colors duration-200 ${isDark ? 'text-neutral-400 group-hover/item:text-red-400' : 'text-neutral-600 group-hover/item:text-red-600'}`}>
                   {experience.company}
                 </p>
 
                 {/* Divider */}
-                <div className={`border-t mb-3 ${isDark ? 'border-white/10' : 'border-gray-200'}`} />
+                <div className={`border-t mb-3 ${isDark ? 'border-neutral-800' : 'border-neutral-100'}`} />
 
                 {/* Description */}
                 <div>
-                  <ul className={`text-sm mb-3 leading-relaxed space-y-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <ul className={`text-sm mb-3 leading-relaxed space-y-2 ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
                     {(() => {
                       const bullets = (expandedExperiences[index] 
                         ? experience.description 
@@ -196,7 +196,7 @@ const SkillsPage = ({ isDark }) => {
                         const isLast = idx === bullets.length - 1;
                         return (
                           <li key={idx} className="flex gap-2">
-                            <span className={isDark ? 'text-lime-500' : 'text-red-500'}>•</span>
+                            <span className={`transition-colors duration-200 ${isDark ? 'text-neutral-600 group-hover/item:text-red-500' : 'text-neutral-400 group-hover/item:text-red-600'}`}>•</span>
                             <span>
                               {bullet.trim()}
                               {isLast && isTruncated && (
@@ -204,8 +204,8 @@ const SkillsPage = ({ isDark }) => {
                                   onClick={() => toggleExpanded(index)}
                                   className={`ml-1 font-semibold transition-all duration-200 ${
                                     isDark
-                                      ? 'text-lime-400 hover:text-lime-300'
-                                      : 'text-red-500 hover:text-red-600'
+                                      ? 'text-neutral-300 hover:text-red-400 underline'
+                                      : 'text-neutral-700 hover:text-red-600 underline'
                                   }`}
                                 >
                                   See More
@@ -216,8 +216,8 @@ const SkillsPage = ({ isDark }) => {
                                   onClick={() => toggleExpanded(index)}
                                   className={`ml-1 font-semibold transition-all duration-200 ${
                                     isDark
-                                      ? 'text-lime-400 hover:text-lime-300'
-                                      : 'text-red-500 hover:text-red-600'
+                                      ? 'text-neutral-300 hover:text-red-400 underline'
+                                      : 'text-neutral-700 hover:text-red-600 underline'
                                   }`}
                                 >
                                   See Less
@@ -236,8 +236,8 @@ const SkillsPage = ({ isDark }) => {
                   {experience.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className={`flex items-center gap-1.5 text-xs font-medium px-2.5 py-1.5 rounded-md shadow-sm
-                        ${isDark ? 'bg-[#1f2937] text-gray-300' : 'bg-gray-100 text-gray-700'}`}
+                      className={`flex items-center gap-1.5 text-xs font-medium px-2.5 py-1.5 rounded-lg shadow-sm border transition-colors duration-200
+                        ${isDark ? 'bg-neutral-800/90 text-neutral-300 border-neutral-700/60 hover:border-red-500/60 hover:text-white' : 'bg-neutral-100 text-neutral-700 border-neutral-200 hover:border-red-500/60 hover:text-black'}`}
                     >
                       {getIconPath(tech) && (
                         <img src={getIconPath(tech)} alt={tech} className="w-4 h-4 object-contain" />

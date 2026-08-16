@@ -108,10 +108,10 @@ const AllCertificatesPage = ({ isDark }) => {
                 <motion.div variants={cardVariants} className="mb-8">
                     <button
                         onClick={handleBackToCertificates}
-                        className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300 ${
+                        className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium border transition-all duration-300 ${
                             isDark
-                                ? 'text-gray-300 hover:text-white hover:bg-[#334155]'
-                                : 'text-gray-700 hover:text-gray-900 hover:bg-gray-200'
+                                ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-white hover:border-red-500 hover:bg-neutral-800'
+                                : 'bg-white border-neutral-200 text-neutral-700 hover:text-black hover:border-red-500 hover:bg-neutral-50'
                         }`}
                     >
                         <ArrowLeft size={18} />
@@ -129,8 +129,8 @@ const AllCertificatesPage = ({ isDark }) => {
                             size={30}                 
                         />
                         <h1
-                            className={`text-3xl md:text-4xl font-bold ${
-                                isDark ? 'text-white' : 'text-gray-900'
+                            className={`text-3xl md:text-4xl font-bold tracking-tight ${
+                                isDark ? 'text-white' : 'text-neutral-900'
                             }`}
                         >
                             All Certificates
@@ -138,7 +138,7 @@ const AllCertificatesPage = ({ isDark }) => {
                     </div>
                     <p
                         className={`text-base ${
-                            isDark ? 'text-gray-400' : 'text-gray-600'
+                            isDark ? 'text-neutral-400' : 'text-neutral-600'
                         }`}
                     >
                         Complete collection of my academic & professional certifications
@@ -151,39 +151,40 @@ const AllCertificatesPage = ({ isDark }) => {
                         <motion.div
                             key={cert.id}
                             variants={cardVariants}
-                            className={`group rounded-lg overflow-hidden flex flex-col transition-all duration-300 cursor-pointer
+                            className={`group rounded-2xl overflow-hidden flex flex-col transition-all duration-300 cursor-pointer border
                                 ${
                                     isDark
-                                        ? 'bg-[#334155] border border-gray-700 hover:border-red-600 hover:shadow-[0_0_0_1px_rgba(239,68,68,0.35)]'
-                                        : 'bg-white border border-gray-200 hover:border-red-600 hover:shadow-[0_0_0_1px_rgba(239,68,68,0.35)]'
+                                        ? 'bg-neutral-900/90 border-neutral-800 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.15)]'
+                                        : 'bg-white border-neutral-200 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.12)]'
                                 }
                             `}
                             onClick={() => setSelectedCert(cert)}
                         >
                             {/* Certificate Image */}
-                            <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                            <div className="relative h-48 overflow-hidden bg-neutral-950">
                                 <img
                                     src={cert.image}
                                     alt={cert.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     onError={(e) => {
-                                        e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"%3E%3Crect fill="%23e5e7eb" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="18" fill="%239ca3af"%3ECertificate Image%3C/text%3E%3C/svg%3E';
+                                        e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"%3E%3Crect fill="%2318181b" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="18" fill="%2371717a"%3ECertificate Image%3C/text%3E%3C/svg%3E';
                                     }}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <span className="text-white font-semibold text-sm">Click to expand</span>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <span className="text-white font-semibold text-xs px-3 py-1.5 rounded-full bg-red-600/90 shadow-md">Click to expand</span>
                                 </div>
                             </div>
 
                             {/* Certificate Content */}
-                            <div className="p-5 flex flex-col flex-grow">
-                                <div className="flex items-start gap-2 mb-2 text-red-600">
+                            <div className="p-6 flex flex-col flex-grow">
+                                <div className="flex items-start gap-2 mb-3 text-red-600">
                                     <Award
                                         size={18}
+                                        className="shrink-0 mt-0.5"
                                     />
                                     <h3
-                                        className={`text-lg font-bold leading-tight ${
-                                            isDark ? 'text-white' : 'text-gray-900'
+                                        className={`text-lg font-bold leading-snug transition-colors duration-200 ${
+                                            isDark ? 'text-white group-hover:text-red-400' : 'text-neutral-900 group-hover:text-red-600'
                                         }`}
                                     >
                                         {cert.title}
@@ -196,25 +197,27 @@ const AllCertificatesPage = ({ isDark }) => {
                                         <img 
                                             src={cert.orgLogo} 
                                             alt={cert.issuer} 
-                                            className="w-8 h-8 object-contain rounded-full" 
+                                            className="w-8 h-8 object-contain rounded-full border border-neutral-700/50" 
                                         />
                                     ) : (
-                                        <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isDark ? 'bg-[#475569]' : 'bg-gray-100'}`}>
-                                            <Award size={18} className={isDark ? 'text-gray-300' : 'text-gray-500'} />
+                                        <div className={`w-8 h-8 rounded-full flex items-center justify-center border ${
+                                            isDark ? 'bg-neutral-800 border-neutral-700 text-neutral-300' : 'bg-neutral-100 border-neutral-200 text-neutral-700'
+                                        }`}>
+                                            <Award size={16} />
                                         </div>
                                     )}
                                     
                                     <div className="flex flex-col">
                                         <p
-                                            className={`text-sm mb-0.5 leading-tight ${
-                                                isDark ? 'text-gray-300' : 'text-gray-700'
+                                            className={`text-sm font-medium mb-0.5 leading-tight ${
+                                                isDark ? 'text-neutral-300' : 'text-neutral-700'
                                             }`}
                                         >
                                             {cert.issuer}
                                         </p>
                                         <p
                                             className={`text-xs leading-tight ${
-                                                isDark ? 'text-gray-400' : 'text-gray-500'
+                                                isDark ? 'text-neutral-400' : 'text-neutral-500'
                                             }`}
                                         >
                                             {cert.date}
@@ -223,14 +226,14 @@ const AllCertificatesPage = ({ isDark }) => {
                                 </div>
 
                                 {/* Skills Tags */}
-                                <div className="flex flex-wrap gap-2 mb-4">
+                                <div className="flex flex-wrap gap-2 mb-6">
                                     {cert.skills.map((skill, index) => (
                                         <span
                                             key={index}
-                                            className={`px-2.5 py-1 rounded-full text-xs font-medium ${
+                                            className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors duration-200 ${
                                                 isDark
-                                                    ? 'bg-[#475569] text-gray-200'
-                                                    : 'bg-gray-100 text-gray-700'
+                                                    ? 'bg-neutral-800 text-neutral-300 border-neutral-700/60 hover:border-red-500 hover:text-white'
+                                                    : 'bg-neutral-100 text-neutral-700 border-neutral-200 hover:border-red-500 hover:text-black'
                                             }`}
                                         >
                                             {skill}
@@ -243,16 +246,20 @@ const AllCertificatesPage = ({ isDark }) => {
 
                                 {/* Verify Button */}
                                 <motion.a
-                                    whileHover={{ scale: 1.03 }}
-                                    whileTap={{ scale: 0.97 }}
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
                                     href={cert.credentialUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     onClick={(e) => e.stopPropagation()}
-                                    className={`flex items-center justify-center gap-1.5 px-3 py-2 rounded-md transition-colors duration-300 bg-red-600 hover:bg-red-700 text-white`}
+                                    className={`flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border transition-all duration-300 ${
+                                        isDark
+                                            ? 'bg-neutral-800 text-neutral-200 border-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-600'
+                                            : 'bg-neutral-900 text-white border-neutral-900 hover:bg-red-600 hover:text-white hover:border-red-600'
+                                    }`}
                                 >
                                     <ExternalLink size={14} />
-                                    <span className="text-xs font-medium">Verify Credential</span>
+                                    <span className="text-xs font-semibold">Verify Credential</span>
                                 </motion.a>
                             </div>
                         </motion.div>
@@ -268,13 +275,13 @@ const AllCertificatesPage = ({ isDark }) => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.25 }}
-                    className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 p-3 rounded-full shadow-lg backdrop-blur-md ${
+                    className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 p-3.5 rounded-full shadow-2xl backdrop-blur-md border transition-all duration-200 ${
                         isDark
-                            ? 'bg-neutral-950/90 text-neutral-200 hover:bg-neutral-900'
-                            : 'bg-white text-neutral-900 hover:bg-gray-100'
+                            ? 'bg-neutral-900/90 text-neutral-200 border-neutral-800 hover:bg-red-600 hover:text-white hover:border-red-600'
+                            : 'bg-white/90 text-neutral-900 border-neutral-200 hover:bg-red-600 hover:text-white hover:border-red-600'
                     }`}
                 >
-                    <ArrowLeft size={20} className="rotate-90" />
+                    <ArrowLeft size={18} className="rotate-90" />
                 </motion.button>
             )}
 
@@ -294,8 +301,8 @@ const AllCertificatesPage = ({ isDark }) => {
                             animate="visible"
                             exit="exit"
                             onClick={(e) => e.stopPropagation()}
-                            className={`relative max-w-5xl w-full rounded-lg overflow-hidden shadow-2xl ${
-                                isDark ? 'bg-[#334155]' : 'bg-white'
+                            className={`relative max-w-5xl w-full rounded-2xl overflow-hidden shadow-2xl border ${
+                                isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-white border-neutral-200'
                             }`}
                         >
                             {/* Close Button */}
@@ -303,21 +310,21 @@ const AllCertificatesPage = ({ isDark }) => {
                                 onClick={() => setSelectedCert(null)}
                                 className={`absolute top-4 right-4 z-10 p-2 rounded-full transition-colors duration-200 ${
                                     isDark
-                                        ? 'bg-black/50 hover:bg-black/70 text-white'
-                                        : 'bg-white/90 hover:bg-white text-gray-900'
+                                        ? 'bg-black/60 hover:bg-red-600 text-white'
+                                        : 'bg-white/90 hover:bg-red-600 hover:text-white text-neutral-900 shadow-md'
                                 }`}
                             >
-                                <X size={24} />
+                                <X size={20} />
                             </button>
 
                             {/* Certificate Image */}
-                            <div className="relative bg-gradient-to-br from-gray-100 to-gray-200">
+                            <div className="relative bg-neutral-950 flex items-center justify-center p-4">
                                 <img
                                     src={selectedCert.image}
                                     alt={selectedCert.title}
-                                    className="w-full max-h-[70vh] object-contain"
+                                    className="w-full max-h-[65vh] object-contain rounded-lg"
                                     onError={(e) => {
-                                        e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"%3E%3Crect fill="%23e5e7eb" width="800" height="600"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="24" fill="%239ca3af"%3ECertificate Image%3C/text%3E%3C/svg%3E';
+                                        e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"%3E%3Crect fill="%2318181b" width="800" height="600"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="24" fill="%2371717a"%3ECertificate Image%3C/text%3E%3C/svg%3E';
                                     }}
                                 />
                             </div>
@@ -327,8 +334,8 @@ const AllCertificatesPage = ({ isDark }) => {
                                 <div className="flex items-start justify-between gap-4 mb-4">
                                     <div>
                                         <h3
-                                            className={`text-2xl font-bold mb-2 ${
-                                                isDark ? 'text-white' : 'text-gray-900'
+                                            className={`text-2xl font-bold mb-2 tracking-tight ${
+                                                isDark ? 'text-white' : 'text-neutral-900'
                                             }`}
                                         >
                                             {selectedCert.title}
@@ -338,24 +345,26 @@ const AllCertificatesPage = ({ isDark }) => {
                                             <img 
                                                 src={selectedCert.orgLogo} 
                                                 alt={selectedCert.issuer} 
-                                                className="w-11 h-11 object-contain rounded-full" 
+                                                className="w-10 h-10 object-contain rounded-full border border-neutral-700/50" 
                                             />
                                         ) : (
-                                            <div className={`w-11 h-11 rounded-full flex items-center justify-center ${isDark ? 'bg-[#475569]' : 'bg-gray-100'}`}>
-                                                <Award size={22} className={isDark ? 'text-gray-300' : 'text-gray-500'} />
+                                            <div className={`w-10 h-10 rounded-full flex items-center justify-center border ${
+                                                isDark ? 'bg-neutral-800 border-neutral-700 text-neutral-300' : 'bg-neutral-100 border-neutral-200 text-neutral-700'
+                                            }`}>
+                                                <Award size={20} />
                                             </div>
                                         )}
                                         <div className="flex flex-col">
                                             <p
-                                                className={`text-base mb-0.5 leading-tight ${
-                                                    isDark ? 'text-gray-300' : 'text-gray-700'
+                                                className={`text-base font-medium mb-0.5 leading-tight ${
+                                                    isDark ? 'text-neutral-300' : 'text-neutral-700'
                                                 }`}
                                             >
                                                 {selectedCert.issuer}
                                             </p>
                                             <p
                                                 className={`text-sm leading-tight ${
-                                                    isDark ? 'text-gray-400' : 'text-gray-500'
+                                                    isDark ? 'text-neutral-400' : 'text-neutral-500'
                                                 }`}
                                             >
                                                 {selectedCert.date}
@@ -370,7 +379,11 @@ const AllCertificatesPage = ({ isDark }) => {
                                         href={selectedCert.credentialUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className={`flex items-center gap-2 px-4 py-2 rounded-md transition-colors duration-300 bg-red-600 hover:bg-red-700 text-white`}
+                                        className={`flex items-center gap-2 px-4 py-2 rounded-xl border transition-all duration-300 ${
+                                            isDark
+                                                ? 'bg-neutral-800 text-neutral-200 border-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-600'
+                                                : 'bg-neutral-900 text-white border-neutral-900 hover:bg-red-600 hover:text-white hover:border-red-600'
+                                        }`}
                                     >
                                         <ExternalLink size={16} />
                                         <span className="text-sm font-medium">Verify</span>
@@ -382,10 +395,10 @@ const AllCertificatesPage = ({ isDark }) => {
                                     {selectedCert.skills.map((skill, index) => (
                                         <span
                                             key={index}
-                                            className={`px-3 py-1.5 rounded-full text-sm font-medium ${
+                                            className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors duration-200 ${
                                                 isDark
-                                                    ? 'bg-[#475569] text-gray-200'
-                                                    : 'bg-gray-100 text-gray-700'
+                                                    ? 'bg-neutral-800 text-neutral-300 border-neutral-700/60 hover:border-red-500 hover:text-white'
+                                                    : 'bg-neutral-100 text-neutral-700 border-neutral-200 hover:border-red-500 hover:text-black'
                                             }`}
                                         >
                                             {skill}

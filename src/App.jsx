@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <>
-      <div className={`fixed top-0 left-0 w-screen h-screen -z-20 transition-colors duration-500 ${isDark ? 'bg-[#1e293b]' : 'bg-gray-50'}`} />
+      <div className={`fixed top-0 left-0 w-screen h-screen -z-20 transition-colors duration-500 ${isDark ? 'bg-[#09090b]' : 'bg-[#fafafa]'}`} />
       <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: -10, pointerEvents: 'none' }}>
         <Antigravity
           count={600}

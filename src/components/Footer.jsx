@@ -15,14 +15,12 @@ const Footer = ({ isDark }) => {
     >
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div
-          className={`border-t ${isDark ? 'border-white/10' : 'border-black/10'
-            }`}
+          className={`border-t ${isDark ? 'border-neutral-800' : 'border-neutral-200'}`}
         />
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <p
-            className={`text-sm ${isDark ? 'text-gray-500' : 'text-gray-500'
-              }`}
+            className={`text-sm ${isDark ? 'text-neutral-500' : 'text-neutral-500'}`}
           >
             © {currentYear} Kim Alfred Molina
           </p>
@@ -36,8 +34,8 @@ const Footer = ({ isDark }) => {
                   ? { target: '_blank', rel: 'noopener noreferrer' }
                   : {})}
                 className={`text-sm font-medium transition-colors duration-200 ${isDark
-                    ? 'text-gray-400 hover:text-white'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'text-neutral-400 hover:text-red-500'
+                    : 'text-neutral-600 hover:text-red-600'
                   }`}
               >
                 {link.label}

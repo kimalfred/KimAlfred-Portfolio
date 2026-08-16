@@ -72,10 +72,10 @@ export default function BurgerMenu({
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsDark(!isDark)}
-        className={`fixed top-6 right-6 z-50 w-12 h-12 rounded-full flex items-center justify-center overflow-hidden transition-all ${
+        className={`fixed top-6 right-6 z-50 w-12 h-12 rounded-full flex items-center justify-center overflow-hidden transition-all shadow-md backdrop-blur-md ${
           isDark
-            ? 'bg-[#475569] text-yellow-400 hover:bg-[#64748b]'
-            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            ? 'bg-neutral-900/90 border border-neutral-800 text-neutral-300 hover:text-red-500 hover:border-red-500/50 hover:bg-neutral-800'
+            : 'bg-white/90 border border-neutral-200 text-neutral-700 hover:text-red-600 hover:border-red-500/50 hover:bg-neutral-50'
         }`}
       >
         <AnimatePresence mode="wait" initial={false}>
@@ -97,10 +97,10 @@ export default function BurgerMenu({
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setMenuOpen(!menuOpen)}
-        className={`fixed top-20 right-6 z-50 w-12 h-12 rounded-full flex items-center justify-center transition-all ${
+        className={`fixed top-20 right-6 z-50 w-12 h-12 rounded-full flex items-center justify-center transition-all shadow-md backdrop-blur-md ${
           isDark
-            ? 'bg-[#475569] text-white hover:bg-[#64748b]'
-            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            ? 'bg-neutral-900/90 border border-neutral-800 text-neutral-300 hover:text-red-500 hover:border-red-500/50 hover:bg-neutral-800'
+            : 'bg-white/90 border border-neutral-200 text-neutral-700 hover:text-red-600 hover:border-red-500/50 hover:bg-neutral-50'
         }`}
       >
         {menuOpen ? <X size={18} /> : <Menu size={18} />}
@@ -123,10 +123,10 @@ export default function BurgerMenu({
                 whileHover={{ scale: 1.12 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection(section)}
-                className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${
+                className={`w-12 h-12 rounded-full flex items-center justify-center transition-all shadow-md backdrop-blur-md ${
                   isDark
-                    ? 'bg-[#475569] text-white hover:bg-[#64748b]'
-                    : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                    ? 'bg-neutral-900/90 border border-neutral-800 text-neutral-300 hover:text-white hover:bg-red-600 hover:border-red-600'
+                    : 'bg-white/90 border border-neutral-200 text-neutral-700 hover:text-white hover:bg-red-600 hover:border-red-600'
                 }`}
               >
                 <Icon size={20} />

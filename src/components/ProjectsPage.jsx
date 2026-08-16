@@ -67,8 +67,8 @@ const ProjectsPage = ({ isDark }) => {
               size={28}
             />
             <h2
-              className={`text-3xl md:text-4xl font-bold ${
-                isDark ? 'text-white' : 'text-gray-900'
+              className={`text-3xl md:text-4xl font-bold tracking-tight ${
+                isDark ? 'text-white' : 'text-neutral-900'
               }`}
             >
               My Projects
@@ -76,7 +76,7 @@ const ProjectsPage = ({ isDark }) => {
           </div>
           <p
             className={`text-base max-w-2xl mx-auto ${
-              isDark ? 'text-gray-400' : 'text-gray-600'
+              isDark ? 'text-neutral-400' : 'text-neutral-600'
             }`}
           >
             Personal projects and collaborative work where I contributed to building and designing websites, showcasing my development skills and experience.
@@ -89,46 +89,46 @@ const ProjectsPage = ({ isDark }) => {
             <motion.div
               key={project.id}
               variants={cardVariants}
-              className={`group rounded-lg overflow-hidden flex flex-col transition-all duration-300 cursor-pointer
+              className={`group rounded-2xl overflow-hidden flex flex-col transition-all duration-300 cursor-pointer border
                   ${
                     isDark
-                      ? 'bg-[#334155] border border-gray-700 hover:border-red-600 hover:shadow-[0_0_0_1px_rgba(239,68,68,0.35)]'
-                      : 'bg-white border border-gray-200 hover:border-red-600 hover:shadow-[0_0_0_1px_rgba(239,68,68,0.35)]'
+                      ? 'bg-neutral-900/90 border-neutral-800 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.15)]'
+                      : 'bg-white border-neutral-200 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.12)]'
                   }
               `}
               onClick={() => setSelectedProject(project)}
             >
               {/* Project Image */}
-              <div className="relative h-40 overflow-hidden">
+              <div className="relative h-44 overflow-hidden bg-neutral-950">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white font-semibold text-sm">Click to expand</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="text-white font-semibold text-xs px-3 py-1.5 rounded-full bg-red-600/90 shadow-md">Click to expand</span>
                 </div>
               </div>
 
               {/* Project Content */}
-              <div className="p-5 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3
-                  className={`text-lg font-bold mb-2 ${
-                    isDark ? 'text-white' : 'text-gray-900'
+                  className={`text-lg font-bold mb-2 transition-colors duration-200 ${
+                    isDark ? 'text-white group-hover:text-red-400' : 'text-neutral-900 group-hover:text-red-600'
                   }`}
                 >
                   {project.title}
                 </h3>
                 <p
-                  className={`text-xs mb-5 line-clamp-4 ${
-                    isDark ? 'text-gray-400' : 'text-gray-600'
+                  className={`text-xs mb-5 line-clamp-4 leading-relaxed ${
+                    isDark ? 'text-neutral-400' : 'text-neutral-600'
                   }`}
                 >
                   {project.description}
                 </p>
 
                 {/* Technologies with Icons */}
-                <div className="flex flex-wrap gap-3 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, index) => {
                     const icon = getIconPath(tech);
                     if (!icon) return null;
@@ -136,12 +136,14 @@ const ProjectsPage = ({ isDark }) => {
                       <div
                         key={index}
                         title={tech}
-                        className={`flex items-center justify-center w-8 h-8 transition-all duration-200 hover:scale-110`}
+                        className={`flex items-center justify-center w-8 h-8 rounded-lg border transition-all duration-200 hover:scale-110 hover:border-red-500 ${
+                          isDark ? 'bg-neutral-800/80 border-neutral-700/60' : 'bg-neutral-100 border-neutral-200'
+                        }`}
                       >
                         <img
                           src={icon}
                           alt={tech}
-                          className="w-6 h-6 object-contain"
+                          className="w-4 h-4 object-contain"
                         />
                       </div>
                     );
@@ -154,33 +156,37 @@ const ProjectsPage = ({ isDark }) => {
                 {/* Action Buttons - Fixed at bottom */}
                 <div className="flex gap-2 mt-auto">
                   <motion.a
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className={`flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-md transition-colors duration-300 ${
+                    className={`flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border transition-all duration-300 ${
                       isDark
-                        ? 'bg-[#475569] hover:bg-[#64748b] text-white'
-                        : 'bg-gray-800 hover:bg-gray-900 text-white'
+                        ? 'bg-neutral-800 text-neutral-300 border-neutral-700 hover:bg-neutral-700 hover:text-white hover:border-red-500'
+                        : 'bg-neutral-100 text-neutral-700 border-neutral-200 hover:bg-neutral-200 hover:text-black hover:border-red-500'
                     }`}
                   >
                     <Github size={14} />
-                    <span className="text-xs font-medium">Code</span>
+                    <span className="text-xs font-semibold">Code</span>
                   </motion.a>
 
                   <motion.a
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-md bg-red-600 hover:bg-red-700 text-white transition-colors duration-300"
+                    className={`flex-1 flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border transition-all duration-300 ${
+                      isDark
+                        ? 'bg-neutral-800 text-neutral-200 border-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-600'
+                        : 'bg-neutral-900 text-white border-neutral-900 hover:bg-red-600 hover:text-white hover:border-red-600'
+                    }`}
                   >
                     <ExternalLink size={14} />
-                    <span className="text-xs font-medium">Demo</span>
+                    <span className="text-xs font-semibold">Demo</span>
                   </motion.a>
                 </div>
               </div>
@@ -192,11 +198,11 @@ const ProjectsPage = ({ isDark }) => {
         <motion.div variants={cardVariants} className="mt-12 text-center">
           <Link
             to="/allprojects"
-            className={`group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md px-6 font-medium transition-colors duration-500
+            className={`group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-xl px-8 font-medium transition-all duration-300 border
               ${
                 isDark
-                  ? 'bg-neutral-950 text-neutral-200 hover:bg-neutral-900'
-                  : 'bg-neutral-900 text-neutral-100 hover:bg-neutral-800'
+                  ? 'bg-neutral-900 text-white border-neutral-800 hover:bg-red-600 hover:border-red-600'
+                  : 'bg-neutral-950 text-white border-neutral-950 hover:bg-red-600 hover:border-red-600'
               }`}
           >
             {/* Default Content */}
@@ -232,8 +238,8 @@ const ProjectsPage = ({ isDark }) => {
               animate="visible"
               exit="exit"
               onClick={(e) => e.stopPropagation()}
-              className={`relative max-w-5xl w-full rounded-lg overflow-hidden shadow-2xl ${
-                isDark ? 'bg-[#334155]' : 'bg-white'
+              className={`relative max-w-5xl w-full rounded-2xl overflow-hidden shadow-2xl border ${
+                isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-white border-neutral-200'
               }`}
             >
               {/* Close Button */}
@@ -241,21 +247,21 @@ const ProjectsPage = ({ isDark }) => {
                 onClick={() => setSelectedProject(null)}
                 className={`absolute top-4 right-4 z-10 p-2 rounded-full transition-colors duration-200 ${
                   isDark
-                    ? 'bg-black/50 hover:bg-black/70 text-white'
-                    : 'bg-white/90 hover:bg-white text-gray-900'
+                    ? 'bg-black/60 hover:bg-red-600 text-white'
+                    : 'bg-white/90 hover:bg-red-600 hover:text-white text-neutral-900 shadow-md'
                 }`}
               >
-                <X size={24} />
+                <X size={20} />
               </button>
 
               {/* Project Image */}
-              <div className="relative bg-gradient-to-br from-gray-100 to-gray-200">
+              <div className="relative bg-neutral-950 flex items-center justify-center p-4">
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
-                  className="w-full max-h-[60vh] object-contain"
+                  className="w-full max-h-[55vh] object-contain rounded-lg"
                   onError={(e) => {
-                    e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"%3E%3Crect fill="%23e5e7eb" width="800" height="600"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="24" fill="%239ca3af"%3EProject Image%3C/text%3E%3C/svg%3E';
+                    e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"%3E%3Crect fill="%2318181b" width="800" height="600"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="24" fill="%2371717a"%3EProject Image%3C/text%3E%3C/svg%3E';
                   }}
                 />
               </div>
@@ -266,23 +272,23 @@ const ProjectsPage = ({ isDark }) => {
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <span
-                        className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
-                          isDark ? 'bg-red-600/20 text-red-400' : 'bg-red-50 text-red-600'
+                        className={`text-xs font-semibold px-3 py-1 rounded-full border ${
+                          isDark ? 'bg-neutral-900 text-neutral-300 border-neutral-800' : 'bg-neutral-100 text-neutral-700 border-neutral-200'
                         }`}
                       >
                         {selectedProject.category}
                       </span>
                     </div>
                     <h3
-                      className={`text-2xl font-bold mb-2 ${
-                        isDark ? 'text-white' : 'text-gray-900'
+                      className={`text-2xl font-bold mb-2 tracking-tight ${
+                        isDark ? 'text-white' : 'text-neutral-900'
                       }`}
                     >
                       {selectedProject.title}
                     </h3>
                     <p
                       className={`text-sm leading-relaxed ${
-                        isDark ? 'text-gray-300' : 'text-gray-600'
+                        isDark ? 'text-neutral-300' : 'text-neutral-600'
                       }`}
                     >
                       {selectedProject.description}
@@ -296,10 +302,10 @@ const ProjectsPage = ({ isDark }) => {
                       href={selectedProject.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex items-center gap-2 px-4 py-2 rounded-md transition-colors duration-300 ${
+                      className={`flex items-center gap-2 px-4 py-2 rounded-xl border transition-all duration-300 ${
                         isDark
-                          ? 'bg-[#475569] hover:bg-[#64748b] text-white'
-                          : 'bg-gray-800 hover:bg-gray-900 text-white'
+                          ? 'bg-neutral-800 text-neutral-300 border-neutral-700 hover:bg-neutral-700 hover:text-white hover:border-red-500'
+                          : 'bg-neutral-100 text-neutral-700 border-neutral-200 hover:bg-neutral-200 hover:text-black hover:border-red-500'
                       }`}
                     >
                       <Github size={16} />
@@ -311,7 +317,11 @@ const ProjectsPage = ({ isDark }) => {
                       href={selectedProject.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 rounded-md bg-red-600 hover:bg-red-700 text-white transition-colors duration-300"
+                      className={`flex items-center gap-2 px-4 py-2 rounded-xl border transition-all duration-300 ${
+                        isDark
+                          ? 'bg-neutral-800 text-neutral-200 border-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-600'
+                          : 'bg-neutral-900 text-white border-neutral-900 hover:bg-red-600 hover:text-white hover:border-red-600'
+                      }`}
                     >
                       <ExternalLink size={16} />
                       <span className="text-sm font-medium">Demo</span>
@@ -322,21 +332,21 @@ const ProjectsPage = ({ isDark }) => {
                 {/* Tech Stack */}
                 <div>
                   <p className={`text-xs font-semibold uppercase tracking-wider mb-3 ${
-                    isDark ? 'text-gray-400' : 'text-gray-500'
+                    isDark ? 'text-neutral-400' : 'text-neutral-500'
                   }`}>
                     Tech Stack
                   </p>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2">
                     {selectedProject.technologies.map((tech, index) => {
                       const icon = getIconPath(tech);
                       return (
                         <div
                           key={index}
                           title={tech}
-                          className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium ${
+                          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-medium border transition-colors duration-200 ${
                             isDark
-                              ? 'bg-[#475569] text-gray-200'
-                              : 'bg-gray-100 text-gray-700'
+                              ? 'bg-neutral-900 text-neutral-300 border-neutral-800 hover:border-red-500 hover:text-white'
+                              : 'bg-neutral-100 text-neutral-700 border-neutral-200 hover:border-red-500 hover:text-black'
                           }`}
                         >
                           {icon && (

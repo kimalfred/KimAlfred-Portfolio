@@ -94,28 +94,30 @@ export default function ProfileCard({ isDark, setIsDark }) {
         {/* Banner Section */}
         <motion.div
           variants={itemVariants}
-          className={`relative h-80 mb-20 rounded-lg flex items-center justify-center transition-colors duration-500 ${isDark ? 'bg-[#334155]' : 'bg-gray-200'
+          className={`relative h-80 mb-20 rounded-2xl flex items-center justify-center transition-colors duration-500 border ${isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-neutral-100 border-neutral-200'
             }`}
         >
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={currentBannerIndex}
-              src={bannerImages[currentBannerIndex]}
-              alt="Banner"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="absolute inset-0 w-full h-full object-cover rounded-lg"
-            />
-          </AnimatePresence>
+          <div className="absolute inset-0 rounded-2xl overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentBannerIndex}
+                src={bannerImages[currentBannerIndex]}
+                alt="Banner"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="w-full h-full object-cover rounded-2xl"
+              />
+            </AnimatePresence>
+          </div>
 
           {/* Profile Picture */}
           <motion.div
             variants={itemVariants}
-            className="absolute -bottom-16 left-6"
+            className="absolute -bottom-16 left-6 z-10"
           >
-            <div className={`w-40 h-40 rounded-full border-4 overflow-hidden ${isDark ? 'border-[#1e293b]' : 'border-white'
+            <div className={`w-40 h-40 rounded-full border-4 overflow-hidden shadow-2xl transition-colors duration-300 ${isDark ? 'border-[#09090b]' : 'border-white'
               }`}>
               <img
                 src={Profile}
@@ -132,7 +134,7 @@ export default function ProfileCard({ isDark, setIsDark }) {
           <div className="hidden md:flex items-start justify-between">
             <div className="relative">
               <div>
-                <h1 className={`text-4xl font-bold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                <h1 className={`text-4xl font-bold mb-1 tracking-tight ${isDark ? 'text-white' : 'text-neutral-900'}`}>
                   <TextType
                     text={["Kim Alfred", "Kim Alfred A. Molina"]}
                     typingSpeed={70}
@@ -146,8 +148,8 @@ export default function ProfileCard({ isDark, setIsDark }) {
                     cursorBlinkDuration={0.5}
                   />
                 </h1>
-                <p className={`text-lg font-semibold ${isDark ? 'text-red-400' : 'text-red-600'}`}>
-                  Software Developer | Full Stack Web Developer
+                <p className={`text-lg font-semibold tracking-wide ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
+                  Software Developer <span className="text-red-500 font-bold mx-1">|</span> Full Stack Web Developer
                 </p>
               </div>
 
@@ -195,8 +197,8 @@ export default function ProfileCard({ isDark, setIsDark }) {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 6 }}
                         className={`absolute -bottom-10 left-1/2 -translate-x-1/2
-                          whitespace-nowrap text-xs px-3 py-1 rounded-md shadow-md
-                          ${isDark ? 'bg-black text-white' : 'bg-gray-900 text-white'}`}
+                          whitespace-nowrap text-xs px-3 py-1 rounded-md shadow-lg border z-20
+                          ${isDark ? 'bg-neutral-900 border-red-500/40 text-neutral-100' : 'bg-neutral-950 border-neutral-800 text-white'}`}
                       >
                         Kim Alfred Email address copied!
                       </motion.div>
@@ -214,14 +216,14 @@ export default function ProfileCard({ isDark, setIsDark }) {
                   e.preventDefault();
                   setShowResumeModal(true);
                 }}
-                className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg"
+                className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-xl"
               >
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className={`relative z-10 flex h-12 items-center justify-center gap-2 rounded-lg px-6 font-medium transition-colors duration-300 ${isDark
-                    ? 'bg-neutral-950 text-neutral-200 border border-gray-600'
-                    : 'bg-neutral-900 text-neutral-100 border border-gray-300'
+                  className={`relative z-10 flex h-12 items-center justify-center gap-2 rounded-xl px-6 font-medium transition-all duration-300 border ${isDark
+                    ? 'bg-neutral-900 text-neutral-200 border-neutral-800 hover:border-red-500 hover:text-red-400 group-hover:border-red-500'
+                    : 'bg-neutral-950 text-white border-neutral-950 hover:bg-neutral-900 hover:border-red-600 hover:text-red-400 group-hover:border-red-600'
                     }`}
                 >
                   {/* Text */}
@@ -231,7 +233,7 @@ export default function ProfileCard({ isDark, setIsDark }) {
                   </span>
                   {/* Icon slides up */}
                   <span className="absolute translate-y-[150%] opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                    <Eye size={22} />
+                    <Eye size={22} className="text-red-500" />
                   </span>
                 </motion.div>
               </a>
@@ -242,7 +244,7 @@ export default function ProfileCard({ isDark, setIsDark }) {
           <div className="md:hidden flex flex-col">
             {/* Name and Title */}
             <div className="mb-4">
-              <h1 className={`text-2xl font-bold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h1 className={`text-2xl font-bold mb-1 tracking-tight ${isDark ? 'text-white' : 'text-neutral-900'}`}>
                 <TextType
                   text={["Kim Alfred", "Kim Alfred Molina"]}
                   typingSpeed={75}
@@ -256,8 +258,8 @@ export default function ProfileCard({ isDark, setIsDark }) {
                   cursorBlinkDuration={0.5}
                 />
               </h1>
-              <p className={`text-base font-semibold ${isDark ? 'text-red-400' : 'text-red-600'}`}>
-                Software Developer | Full Stack Web Developer
+              <p className={`text-base font-semibold ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
+                Software Developer <span className="text-red-500 font-bold mx-1">|</span> Full Stack Web Developer
               </p>
             </div>
 
@@ -269,9 +271,9 @@ export default function ProfileCard({ isDark, setIsDark }) {
                 href="https://github.com/kimalfredmolina"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-2.5 rounded-full transition-colors duration-300 ${isDark
-                  ? 'bg-[#334155] hover:bg-[#475569] text-white'
-                  : 'bg-gray-800 hover:bg-gray-900 text-white'
+                className={`p-2.5 rounded-full transition-all duration-300 shadow-sm border ${isDark
+                  ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-600'
+                  : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-600'
                   }`}
               >
                 <Github size={18} />
@@ -283,7 +285,10 @@ export default function ProfileCard({ isDark, setIsDark }) {
                 href="https://www.linkedin.com/in/kim-alfred-a-molina/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300"
+                className={`p-2.5 rounded-full transition-all duration-300 shadow-sm border ${isDark
+                  ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-600'
+                  : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-600'
+                  }`}
               >
                 <Linkedin size={18} />
               </motion.a>
@@ -293,7 +298,10 @@ export default function ProfileCard({ isDark, setIsDark }) {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={handleCopyEmail}
-                  className="p-2.5 rounded-full bg-red-600 hover:bg-red-700 text-white transition-colors duration-300"
+                  className={`p-2.5 rounded-full transition-all duration-300 shadow-sm border ${isDark
+                    ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-600'
+                    : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-600'
+                    }`}
                 >
                   <Mail size={18} />
                 </motion.button>
@@ -305,8 +313,8 @@ export default function ProfileCard({ isDark, setIsDark }) {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 6 }}
                       className={`absolute -bottom-10 left-1/2 -translate-x-1/2
-                        whitespace-nowrap text-xs px-3 py-1 rounded-md shadow-md z-10
-                        ${isDark ? 'bg-black text-white' : 'bg-gray-900 text-white'}`}
+                        whitespace-nowrap text-xs px-3 py-1 rounded-md shadow-lg border z-10
+                        ${isDark ? 'bg-neutral-900 border-red-500/40 text-neutral-100' : 'bg-neutral-950 border-neutral-800 text-white'}`}
                     >
                       Email copied!
                     </motion.div>
@@ -323,14 +331,14 @@ export default function ProfileCard({ isDark, setIsDark }) {
                   e.preventDefault();
                   setShowResumeModal(true);
                 }}
-                className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg flex-1"
+                className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-xl flex-1"
               >
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className={`relative z-10 flex h-12 w-full items-center justify-center gap-2 rounded-lg px-6 font-medium transition-colors duration-300 ${isDark
-                    ? 'bg-neutral-950 text-neutral-200 border border-gray-600'
-                    : 'bg-neutral-900 text-neutral-100 border border-gray-300'
+                  className={`relative z-10 flex h-12 w-full items-center justify-center gap-2 rounded-xl px-6 font-medium transition-all duration-300 border ${isDark
+                    ? 'bg-neutral-900 text-neutral-200 border-neutral-800 hover:border-red-500 hover:text-red-400 group-hover:border-red-500'
+                    : 'bg-neutral-950 text-white border-neutral-950 hover:bg-neutral-900 hover:border-red-600 hover:text-red-400 group-hover:border-red-600'
                     }`}
                 >
                   {/* Text */}
@@ -340,7 +348,7 @@ export default function ProfileCard({ isDark, setIsDark }) {
                   </span>
                   {/* Icon slides up */}
                   <span className="absolute translate-y-[150%] opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                    <Eye size={22} />
+                    <Eye size={22} className="text-red-500" />
                   </span>
                 </motion.div>
               </a>
@@ -356,7 +364,7 @@ export default function ProfileCard({ isDark, setIsDark }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 z-40 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/75 backdrop-blur-sm z-40 flex items-center justify-center p-4"
             onClick={() => setShowResumeModal(false)}
           >
             <motion.div
@@ -364,18 +372,19 @@ export default function ProfileCard({ isDark, setIsDark }) {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               onClick={(e) => e.stopPropagation()}
-              className={`relative w-full h-[85vh] max-w-5xl rounded-2xl overflow-hidden shadow-2xl ${isDark ? 'bg-[#1e293b]/90' : 'bg-white/90'
+              className={`relative w-full h-[85vh] max-w-5xl rounded-2xl overflow-hidden shadow-2xl border ${isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-white border-neutral-200'
                 }`}
             >
               {/* Close Button */}
-              <div className={`absolute top-4 left-4 z-10 flex items-center gap-2 ${isDark ? 'bg-[#2d3748]' : 'bg-gray-100'} p-2 rounded-lg`}>
+              <div className={`absolute top-4 left-4 z-10 flex items-center gap-2 ${isDark ? 'bg-neutral-900 border border-neutral-800' : 'bg-neutral-100 border border-neutral-200'
+                } p-1.5 rounded-xl shadow-md`}>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setShowResumeModal(false)}
-                  className={`p-2 rounded-lg transition-colors ${isDark
-                    ? 'hover:bg-[#334155] text-gray-300'
-                    : 'hover:bg-gray-200 text-gray-700'
+                  className={`p-2 rounded-lg transition-colors font-bold text-sm ${isDark
+                    ? 'text-neutral-300 hover:bg-red-600 hover:text-white'
+                    : 'text-neutral-700 hover:bg-red-600 hover:text-white'
                     }`}
                 >
                   ✕
