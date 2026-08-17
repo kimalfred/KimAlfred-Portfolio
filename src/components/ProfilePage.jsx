@@ -163,8 +163,8 @@ export default function ProfileCard({ isDark, setIsDark }) {
                   rel="noopener noreferrer"
                   className={`p-2.5 rounded-full transition-all duration-300 shadow-md border ${
                     isDark
-                      ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
-                      : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
+                      ? 'bg-neutral-900 border-neutral-800 text-white hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
+                      : 'bg-white border-neutral-200 text-black hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
                   }`}
                   title="GitHub"
                 >
@@ -179,8 +179,8 @@ export default function ProfileCard({ isDark, setIsDark }) {
                   rel="noopener noreferrer"
                   className={`p-2.5 rounded-full transition-all duration-300 shadow-md border ${
                     isDark
-                      ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
-                      : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
+                      ? 'bg-[#0A66C2] border-[#0A66C2] text-white hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
+                      : 'bg-[#0A66C2] border-[#0A66C2] text-white hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
                   }`}
                   title="LinkedIn"
                 >
@@ -194,8 +194,8 @@ export default function ProfileCard({ isDark, setIsDark }) {
                     onClick={handleCopyEmail}
                     className={`p-2.5 rounded-full transition-all duration-300 shadow-md border ${
                       isDark
-                        ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
-                        : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
+                        ? 'bg-neutral-900 border-neutral-800 text-red-500 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
+                        : 'bg-white border-neutral-200 text-red-500 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
                     }`}
                     title="Copy Email"
                   >
@@ -287,8 +287,8 @@ export default function ProfileCard({ isDark, setIsDark }) {
                 rel="noopener noreferrer"
                 className={`p-2.5 rounded-full transition-all duration-300 shadow-md border ${
                   isDark
-                    ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
-                    : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
+                    ? 'bg-neutral-900 border-neutral-800 text-white hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
+                    : 'bg-white border-neutral-200 text-black hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
                 }`}
                 title="GitHub"
               >
@@ -303,8 +303,8 @@ export default function ProfileCard({ isDark, setIsDark }) {
                 rel="noopener noreferrer"
                 className={`p-2.5 rounded-full transition-all duration-300 shadow-md border ${
                   isDark
-                    ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
-                    : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
+                    ? 'bg-[#0A66C2] border-[#0A66C2] text-white hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
+                    : 'bg-[#0A66C2] border-[#0A66C2] text-white hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
                 }`}
                 title="LinkedIn"
               >
@@ -318,8 +318,8 @@ export default function ProfileCard({ isDark, setIsDark }) {
                   onClick={handleCopyEmail}
                   className={`p-2.5 rounded-full transition-all duration-300 shadow-md border ${
                     isDark
-                      ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
-                      : 'bg-white border-neutral-200 text-neutral-700 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
+                      ? 'bg-neutral-900 border-neutral-800 text-red-500 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
+                      : 'bg-white border-neutral-200 text-red-500 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]'
                   }`}
                   title="Copy Email"
                 >
